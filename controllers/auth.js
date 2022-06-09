@@ -7,12 +7,8 @@ const fs = require("fs");
 const path = require("path");
 const { body, checkSchema, validationResult } = require("express-validator");
 
-if (process.env.NODE_ENV === "production") {
-  JWT_SECRET = process.env.SECRET;
-} else {
-  JWT_SECRET = process.env.JWT_SECRET;
-}
 
+const JWT_SECRET = process.env.JWT_SECRET_PROD || "secret";
 //signup user and check if user exist and crypt paswword with bcryptjs and send a success message to the client side in json format
 exports.signup = (req, res) => {
   User.findOne({
@@ -48,6 +44,7 @@ exports.signup = (req, res) => {
 // login
 exports.login = (req, res) => {
   const { email, password } = req.body;
+  console.log("JWT_SECRET", JWT_SECRET);
   User.findOne({ email })
     .then((user) => {
       if (!user) {

@@ -12,7 +12,7 @@ const Login = () => {
     //  formState: { errors },
   } = useForm();
   const { dispatch } = useContext(UserContext);
-  const [validationErrors, setValidationErrors] = useState<any>([]);
+  const [validationErrors, setValidationErrors] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errors, setErrors] = useState<any>();
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const Login = () => {
                 placeholder="Email*"
                 className="w-full px-3 py-2  rounded-md  border border-gray focus:outline-none focus:ring-2 focus:ring-gray-200"
               />
-              {validationErrors &&
+              {validationErrors !==null &&
                 validationErrors.map((message: any, i: any) =>
                   message.param && message.param === "email" ? (
                     <div key={i}>
@@ -107,7 +107,7 @@ const Login = () => {
                 placeholder=" Mot de passe*"
                 className="w-full px-3 py-2  rounded-md  border border-gray focus:outline-none focus:ring-2 focus:ring-gray-200 "
               />
-              {validationErrors &&
+              {validationErrors !==null&&
                 validationErrors.map((message: any, i: any) =>
                   message.param && message.param === "password" ? (
                     <div key={i}>
