@@ -25,7 +25,7 @@ const PropertyDetails = () => {
     axios
       .delete(`${API_URL}/deleteProperty/${id}`, {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: `${localStorage.getItem("token")}`,
         },
       })
       .then((res) => {
