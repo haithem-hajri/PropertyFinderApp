@@ -1,0 +1,97 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.search-page-container {
+  .hero-container {
+    background-color: #ecfccb;
+    padding: 0;
+    margin: 0;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+
+    .hero-text {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+      color: $primary;
+    }
+
+    .hero-subtext {
+      font-size: 1.5rem;
+      color: $primary-light;
+      margin-bottom: 1rem;
+    }
+
+    .hero-search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid $primary;
+      border-radius: 25px;
+      padding: 1rem;
+      height: 50px;
+      width: 50%;
+      position: relative;
+
+      @media screen and (max-width: 863px) {
+        width: 90%;
+      }
+
+      .hero-search-input {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        color: #333;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: $primary-light;
+        }
+      }
+
+      .hero-search-button {
+        text-align: center;
+        background-color: $primary;
+        //  color: #fff;
+        border: none;
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+        padding: 0.5rem 1rem;
+        position: absolute;
+        right: 0;
+
+        //font-size: 1.5rem;
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .search-results-container {
+    padding: 1rem;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 863px) {
+      width: 90%;
+    }
+  }
+}

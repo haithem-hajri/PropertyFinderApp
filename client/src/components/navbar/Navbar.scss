@@ -1,0 +1,235 @@
+@import "../../stylesheets/variables.scss";
+@import "../../stylesheets/mixins.scss";
+
+.navigation {
+  @include flex();
+  align-items: center;
+  color: $black;
+  background-color: $white;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  height: 66px;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  z-index: 100000;
+
+  .brand-name {
+    color: $primary;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+
+  .hamburger {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: $white;
+    background-color: $primary;
+    display: none;
+    text-align: center;
+    margin-left: auto;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+
+    @media screen and (max-width: 863px) {
+      display: block;
+    }
+
+  }
+
+  .navigation-menu {
+    @include flex();
+    align-items: center;
+    margin-left: auto;
+    justify-content: space-between;
+    // background-color: black;
+    // height: 100%;
+    width: 80%;
+
+    button {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: $primary;
+      color: $white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+
+    ul {
+      @include flex();
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      margin-right: 1rem;
+      width: 70%;
+      margin-left: auto;
+
+      @media screen and (max-width: 1205px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 863px) {
+        display: none;
+        /* navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar)*/
+        position: absolute;
+        top: 60px;
+        left: 0;
+        /* stacks the li tags vertically */
+        /* makes menu span full height and width*/
+        width: 100%;
+        height: 100%;
+        // height: calc(100vh - 77px);
+        border-top: 1px solid black;
+
+      }
+
+      .navbar-link {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $primary-light;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+
+        &:hover::after,
+        &:focus::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+
+      li {
+        text-align: center;
+        margin: 0;
+        margin-left: 1rem;
+        font-size: 1em;
+        color: $primary;
+
+        @media screen and (max-width: 863px) {
+          text-align: center;
+          margin: 0;
+          padding: 1rem 0;
+          width: 100%;
+          font-size: 1em;
+          color: black;
+          background-color: white;
+        }
+      }
+    }
+
+    .user-block {
+      margin-left: 2rem;
+
+      @media screen and (max-width: 863px) {
+        margin: 0;
+      }
+    }
+
+    .logged-in-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.25rem;
+      position: relative;
+
+      &:hover {
+        .dropdown-content {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 863px) {
+        text-align: center;
+        margin: 0;
+        padding: 1rem 0;
+        width: 100%;
+        font-size: 1em;
+        color: black;
+        background-color: white;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 22px;
+        right: -10px;
+        background-color: #ecfccb;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        @media screen and (max-width: 863px) {
+          display: flex;
+          position: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          top: 60px;
+          width: 100%;
+          background-color: white;
+          color: black;
+        }
+
+        a {
+          color: $primary-dark;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+
+          &:hover {
+            background-color: $primary-dark;
+            color: $white;
+          }
+
+          @media screen and (max-width: 863px) {
+            color: black;
+            padding: 1rem 0;
+          }
+
+        }
+      }
+    }
+  }
+
+  .expanded {
+    ul {
+      display: block;
+      background-color: white;
+      height: 100vh;
+      overflow-y: auto;
+    }
+  }
+}
+
+.dropdown {
+  @media screen and (max-width: 863px) {
+    display: none;
+  }
+
+}

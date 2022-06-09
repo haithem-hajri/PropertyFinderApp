@@ -1,0 +1,7 @@
+//hidden media query for mobile
+.responsive {
+
+  @media (max-width: 823px) {
+    display: none;
+  }
+}
