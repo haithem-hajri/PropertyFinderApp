@@ -16,7 +16,7 @@ const Navbar = () => {
     //logout function with axios
     setIsNavExpanded(false);
     axios
-      .post(API_URL + "/logout")
+      .post(API_URL + "/auth/logout")
       .then((res) => {
         dispatch({
           type: "LOGGED_OUT",

@@ -33,10 +33,10 @@ mongoose.connect(
 //middlwares
 
 //app.use(bodyParser.urlencoded({ extended: true })); 
-//app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 //routes
-app.use("/api", auth);
+app.use("/api/auth", auth);
 app.use("/api", contactUs);
 app.use("/api", property);
 

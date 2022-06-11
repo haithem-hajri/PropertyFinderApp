@@ -66,12 +66,11 @@ function App() {
     const token = localStorage.getItem("token");
     if (token) {
       //get user axios
-      
       axios
-        .get(API_URL + "/getUser", {
+        .get(API_URL + "/auth/getUser", {
           headers: {
-            "Content-Type":"application/json",
-            "Authorization":`${localStorage.getItem("token")}`
+            Authorization: token,
+            'content-type': 'application/json'
           },
         })
         .then((res) => {
@@ -81,18 +80,18 @@ function App() {
           });
         })
         .catch((err) => {
-        /*  dispatch({
+          dispatch({
             type: "LOGGED_OUT",
             payload: { user: null, isLoggedIn: false },
           });
-          localStorage.clear();*/
+          localStorage.clear();
         });
     } else {
-    /*  dispatch({
+      dispatch({
         type: "LOGGED_OUT",
         payload: { user: null, isLoggedIn: false },
       });
-      localStorage.clear();*/
+      localStorage.clear();
     }
   }, []);
 

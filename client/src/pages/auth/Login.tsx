@@ -19,7 +19,7 @@ const Login = () => {
   const onSubmit = (data: object) => {
     setLoading(true);
     axios
-      .post(API_URL + "/login", data)
+      .post(API_URL + "/auth/login", data)
       .then((res) => {
         setLoading(false);
         dispatch({

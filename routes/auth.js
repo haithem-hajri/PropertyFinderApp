@@ -31,5 +31,5 @@ router.put("/updatePassword", requireLogin, updatePassword);
 
 module.exports = router;
 
-//// Validate incoming input //updateUserSchema
+//// Validate incoming input //updateUserSchema 
 //const errors = validationResult(req);

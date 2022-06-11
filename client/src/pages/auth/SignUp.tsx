@@ -19,7 +19,7 @@ const SignUp = () => {
   const onSubmit = (data: object) => {
     setLoading(true);
     axios
-      .post(API_URL + "/signup", data)
+      .post(API_URL + "/auth/signup", data)
       .then((res) => {
         navigate("/login");
         setLoading(false);

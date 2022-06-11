@@ -26,7 +26,7 @@ const MyProfile = () => {
     //update user api
     setLoading(true);
     axios
-      .put(API_URL + "/updateUser", data, {
+      .put(API_URL + "/auth/updateUser", data, {
         headers: {
           Accept: "application/json",
           Authorization: `${localStorage.getItem("token")}`,
