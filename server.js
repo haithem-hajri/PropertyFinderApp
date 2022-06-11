@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 const contactUs = require("./routes/contact-us");
 const property = require("./routes/property");
 const config = require("dotenv").config();
+const path = require("path");
+const {requireLogin} = require("./middlware/auth-middlware");
 mongoose.Promise = global.Promise;
 
 // Connect MongoDB at default port 27017.
@@ -35,6 +37,11 @@ mongoose.connect(
 //app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(cors());
 app.use(bodyParser.json());
+app.get('/hello', requireLogin,(req, res) => {
+  console.log('hellozebbi:',req);
+  console.log('3asba:',req.headers.authorization);
+  res.send('nice')
+});
 //routes
 app.use("/api/auth", auth);
 app.use("/api", contactUs);

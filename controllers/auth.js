@@ -2,9 +2,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
-
 const { validationResult } = require("express-validator");
-
 const JWT_SECRET = process.env.JWT_SECRET_PROD || "secret";
 //signup user and check if user exist and crypt paswword with bcryptjs and send a success message to the client side in json format
 exports.signup = (req, res) => {
