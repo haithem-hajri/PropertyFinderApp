@@ -144,6 +144,8 @@ exports.updateAvatar = (req, res) => {
 
 // get user by token  and send user data to the client side
 exports.getUser = (req, res) => {
+  console.log("reqelment", req);
+  console.log("reqbbi", req.headers.authorization);
   const { id } = req.user;
   User.findById(id)
     .then((user) => {
