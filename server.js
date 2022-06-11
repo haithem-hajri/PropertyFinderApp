@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise;
 
 // Connect MongoDB at default port 27017.
 if (process.env.NODE_ENV === "production") {
-  DB = process.env.PROD_MONGO;
+  DB = process.env.MONGO_URI;
 } else {
   DB = process.env.DEV_MONGO;
 }
@@ -32,8 +32,8 @@ mongoose.connect(
 );
 //middlwares
 
-//app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+//app.use(bodyParser.urlencoded({ extended: true })); 
+//app.use(cors());
 app.use(bodyParser.json());
 //routes
 app.use("/api", auth);
