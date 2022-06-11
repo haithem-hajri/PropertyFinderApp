@@ -66,11 +66,12 @@ function App() {
     const token = localStorage.getItem("token");
     if (token) {
       //get user axios
+      
       axios
         .get(API_URL + "/getUser", {
           headers: {
-            Accept: 'application/json',
-            'authorization': `${localStorage.getItem("token")}`,
+            "Content-Type":"application/json",
+            "Authorization":`${localStorage.getItem("token")}`
           },
         })
         .then((res) => {
