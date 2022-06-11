@@ -80,6 +80,7 @@ function App() {
           });
         })
         .catch((err) => {
+          console.log("error", err);
           dispatch({
             type: "LOGGED_OUT",
             payload: { user: null, isLoggedIn: false },
