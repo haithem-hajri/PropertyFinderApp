@@ -69,7 +69,8 @@ function App() {
       axios
         .get(API_URL + "/getUser", {
           headers: {
-            Authorization: `${localStorage.getItem("token")}`,
+            Accept: 'application/json',
+            'authorization': `${localStorage.getItem("token")}`,
           },
         })
         .then((res) => {
