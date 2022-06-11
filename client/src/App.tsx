@@ -79,18 +79,18 @@ function App() {
           });
         })
         .catch((err) => {
-          dispatch({
+        /*  dispatch({
             type: "LOGGED_OUT",
             payload: { user: null, isLoggedIn: false },
           });
-          localStorage.clear();
+          localStorage.clear();*/
         });
     } else {
-      dispatch({
+    /*  dispatch({
         type: "LOGGED_OUT",
         payload: { user: null, isLoggedIn: false },
       });
-      localStorage.clear();
+      localStorage.clear();*/
     }
   }, []);
 
