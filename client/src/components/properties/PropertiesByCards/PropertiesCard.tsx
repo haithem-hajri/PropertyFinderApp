@@ -15,7 +15,7 @@ const PropertiesCard = (props: any) => {
     const fetchData = async () => {
       setIsLoading(true);
       const res = await axios.get(
-        `${API_URL}/getPropertyPagination?page=${currentPage}&category=${categories}&city=${city}&type=${type}`
+        `${API_URL}/api/getPropertyPagination?page=${currentPage}&category=${categories}&city=${city}&type=${type}`
       );
       setData(res.data.docs);
       setTotalPages(res.data.totalPages);
