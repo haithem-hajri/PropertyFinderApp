@@ -1,8 +1,9 @@
 //midllwares are used to check if the user is logged in or not
 //and if not logged in then redirect to login page
 const jwt = require("jsonwebtoken");
-const jwtSecret = "secret";
+const jwtSecret =JWT_SECRET_PROD ||"secret";
 exports.requireLogin = (req, res, next) => {
+  console.log("req.headers.authorization:", req.headers.authorization);
   const authHeader = req.headers.authorization;
   if (authHeader) {
     const token = authHeader.split(" ")[1];
