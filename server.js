@@ -37,11 +37,7 @@ mongoose.connect(
 //app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(cors());
 app.use(bodyParser.json());
-app.get('/hello', requireLogin,(req, res) => {
-  console.log('hellozebbi:',req);
-  console.log('3asba:',req.headers.authorization);
-  res.send('nice')
-});
+
 //routes
 app.use("/api/auth", auth);
 app.use("/api", contactUs);

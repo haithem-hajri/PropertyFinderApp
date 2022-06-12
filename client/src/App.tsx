@@ -70,7 +70,7 @@ function App() {
         .get(API_URL + "/auth/getUser", {
           headers: {
             Authorization: token,
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
         })
         .then((res) => {
