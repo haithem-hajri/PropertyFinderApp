@@ -51,7 +51,7 @@ exports.login = (req, res) => {
             const payload = {
               id: user.id,
               name: user.name,
-              email: user.email,
+              email: user.email, 
               mobile: user.mobile,
               hasAvatar: user.hasAvatar,
             };
@@ -132,7 +132,7 @@ exports.updateUser = (req, res) => {
       if (name) {
         user.name = name;
       }
-      if (mobile) {
+      if (mobile) { 
         user.mobile = mobile;
       }
       user.save().then((user) => {

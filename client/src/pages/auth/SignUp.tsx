@@ -204,7 +204,7 @@ const SignUp = () => {
                   </p>{" "}
                 </div>
               )}
-            </div>
+            </div> 
           </div>
           <div className="space-y-2">
             <div>
@@ -213,7 +213,7 @@ const SignUp = () => {
                 type="submit"
                 className="flex justify-center w-full px-8 py-3 rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:shadow-outline text-white font-bold"
               >
-                {loading && (
+                {loading && ( 
                   <SpinnerCircularSplit
                     color="white"
                     size={"25px"}

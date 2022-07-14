@@ -5,7 +5,7 @@ import PropertiesMap from "./PropertiesMap/PropertiesMap";
 import PropertiesCard from "./PropertiesByCards/PropertiesCard";
 import { BsFilterSquare } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
-import Modal from "../../helpers/Modal/Modal";
+import Modal from "../../helpers/Modal/Modal"; 
 const Properties = () => {
   const [searchMethod, setSearchMethod] = useState("cards");
   const [categories, setCategories] = React.useState<any | Array<string>>([]);
