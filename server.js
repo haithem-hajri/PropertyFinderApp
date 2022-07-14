@@ -50,8 +50,9 @@ if (
   app.use(express.static("client/build"));
   app.use('/admin', express.static(path.join(__dirname, 'admin/build')))
 
-  app.get('admin/*', (req, res) => {
+  app.get('/admin/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/admin/build/index.html'))
+   //res.send('helloworld')
   })
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname + "/client/build/index.html"));
