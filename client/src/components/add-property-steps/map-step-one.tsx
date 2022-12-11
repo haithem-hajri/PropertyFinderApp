@@ -7,11 +7,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //import "leaflet/dist/leaflet.css";
 
-L.Icon.Default.mergeOptions({
-  // iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
+// L.Icon.Default.mergeOptions({
+//   // iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+//   iconUrl: require("leaflet/dist/images/marker-icon.png"),
+//   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+// });
 
 const MapStepOne = (props: any) => {
   const { step, setStep, setProperty } = props;
