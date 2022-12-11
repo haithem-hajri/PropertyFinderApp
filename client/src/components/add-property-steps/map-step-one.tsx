@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 //import "leaflet/dist/leaflet.css";
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+  // iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
   iconUrl: require("leaflet/dist/images/marker-icon.png"),
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
@@ -25,7 +25,6 @@ const MapStepOne = (props: any) => {
         setSelectedPosition([e.latlng.lat, e.latlng.lng]);
       },
     });
-    console.log("map", map);
     return selectedPosition ? (
       <Marker
         key={selectedPosition[0]}
